@@ -25,7 +25,7 @@
 
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:32px 0}
     .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px}
-    h1{font-size:56px;line-height:1.05;margin:0 0 8px;font-weight:800}
+    h1{font-size:72px;line-height:1.05;margin:0 0 8px;font-weight:800}
     .gradient{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
     .subtitle{color:var(--muted);font-size:16px;margin:0 0 22px}
     .btn-row{display:flex;gap:12px;flex-wrap:wrap}
@@ -50,7 +50,6 @@
 
     footer{margin:48px 0 16px;color:var(--muted);text-align:center;font-size:12px}
 
-    /* Sections as pages */
     .page{display:none}
     .page.active{display:block}
   </style>
@@ -62,23 +61,23 @@
         <strong>Manav Patel</strong>
         <div class="nav-links">
           <a class="chip" data-show="home" href="#home">Home</a>
-          <a class="chip" data-show="projects" href="#projects">Projects</a>
-          <a class="chip" data-show="contact" href="#contact">Contact</a>
           <a class="chip" href="Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-          <a class="chip" href="https://github.com/ManavPatel-28" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="chip" data-show="projects" href="#projects">Projects</a>
           <a class="chip" href="https://www.linkedin.com/in/manav-patel-211467333" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="chip" href="https://github.com/ManavPatel-28" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="chip" data-show="contact" href="#contact">Contact</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <!-- HOME (general) -->
+    <!-- HOME -->
     <section id="home" class="page active">
       <div class="hero">
         <div class="hero-card">
           <h1>Hi, I’m <span class="gradient">Manav Patel</span></h1>
-          <p class="subtitle">Final‑year CS @ Rutgers · Java • Python • SQL • C · Data analysis, backend, and systems.</p>
+          <p class="subtitle">Final-year CS @ Rutgers · Java • Python • SQL • C · Data analysis, backend, and systems.</p>
           <div class="btn-row">
             <a class="btn primary" href="#projects" data-show="projects">See Projects</a>
             <a class="btn ghost" href="Resume.pdf" target="_blank">View Resume</a>
@@ -96,12 +95,12 @@
       </div>
     </section>
 
-    <!-- PROJECTS (only projects) -->
+    <!-- PROJECTS -->
     <section id="projects" class="page">
       <h2>Projects</h2>
       <div class="grid cols-2">
         <article class="project">
-          <h3>Spider‑Verse Data Structures (Java)</h3>
+          <h3>Spider-Verse Data Structures (Java)</h3>
           <ul>
             <li>Built adjacency lists & custom hash table with rehashing.</li>
             <li>Implemented DFS/BFS + Dijkstra; wrote tests and docs.</li>
@@ -124,8 +123,8 @@
         <article class="project">
           <h3>Bomb Lab (C/Assembly)</h3>
           <ul>
-            <li>Reverse‑engineered binary with GDB/objdump; traced control flow.</li>
-            <li>Defused all phases; strengthened low‑level debugging.</li>
+            <li>Reverse-engineered binary with GDB/objdump; traced control flow.</li>
+            <li>Defused all phases; strengthened low-level debugging.</li>
           </ul>
         </article>
         <article class="project">
@@ -138,7 +137,7 @@
       </div>
     </section>
 
-    <!-- CONTACT (only contact info) -->
+    <!-- CONTACT -->
     <section id="contact" class="page">
       <h2>Contact</h2>
       <div class="card pad">
@@ -156,7 +155,6 @@
   </footer>
 
   <script>
-    // Minimal router: show one section at a time
     const pages = Array.from(document.querySelectorAll('.page'));
     const navChips = Array.from(document.querySelectorAll('[data-show]'));
     function show(id){
@@ -174,6 +172,7 @@
   </script>
 </body>
 </html>
+
 
 
 
