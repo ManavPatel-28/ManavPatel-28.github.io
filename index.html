@@ -12,7 +12,9 @@
     :root{ --bg:#0b0f14; --text:#e8eef6; --muted:#a7b3c4; --ring:0 0 0 3px rgba(124,58,237,.25); }
     *{box-sizing:border-box}
     html,body{margin:0;
-      background: linear-gradient(135deg, #0b0f14 0%, #1a2233 50%, #2d1b69 100%);
+      background:radial-gradient(1200px 800px at 10% -10%,rgba(34,211,238,.15),transparent 60%),
+                 radial-gradient(1000px 700px at 110% 10%,rgba(124,58,237,.15),transparent 60%),
+                 var(--bg);
       color:var(--text);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif}
     a{color:inherit}
@@ -37,8 +39,8 @@
         <strong>Manav Patel</strong>
         <div class="nav-links">
           <a class="chip" href="Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-          <a class="chip" href="#projects">Projects</a>
-          <a class="chip" href="mailto:Manavspatel2802@gmail.com">Contact</a>
+          <a class="chip" href="projects.html">Projects</a>
+          <a class="chip" href="contact.html">Contact</a>
           <a class="chip" href="https://github.com/ManavPatel-28" target="_blank" rel="noreferrer">GitHub</a>
           <a class="chip" href="https://www.linkedin.com/in/manav-patel-211467333" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
@@ -50,30 +52,7 @@
     <section id="intro">
       <h1>Hello!</h1>
       <div class="card">
-        <p>I'm <strong>Manav Patel</strong>, a final‑year Computer Science student at Rutgers. Click <strong>Resume</strong> above to view my full PDF. <br>
-        For quick contact: <a href="mailto:Manavspatel2802@gmail.com">Manavspatel2802@gmail.com</a>.</p>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects (from my resume)</h2>
-      <div class="card">
-        <ul>
-          <li><strong>Spider‑Verse Data Structures (Java)</strong> — Implemented adjacency lists, hash tables with rehashing, DFS, BFS, and Dijkstra’s algorithm.</li>
-          <li><strong>Music Database Project (SQL)</strong> — Normalized relational schema (artists, albums, songs, playlists, users, ratings) and wrote 10 analysis queries.</li>
-          <li><strong>Data Analysis Projects (Python)</strong> — EU Cities, German Credit, Google Playstore; cleaning, transformation, visualization.</li>
-          <li><strong>Bomb Lab – Reverse Engineering (C/Assembly)</strong> — Used GDB/objdump to trace memory and control flow; defused all phases.</li>
-          <li><strong>Truth Table Generator – Logic Circuit Simulator (C)</strong> — Evaluates AND/OR/NOT/XOR, Multiplexer, Decoder; bitwise logic & file I/O.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>Email: <a href="mailto:Manavspatel2802@gmail.com">Manavspatel2802@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/ManavPatel-28" target="_blank">github.com/ManavPatel-28</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/manav-patel-211467333" target="_blank">linkedin.com/in/manav-patel-211467333</a></p>
+        <p>I'm <strong>Manav Patel</strong>, a final-year Computer Science student at Rutgers. Use the navigation above to view my <strong>Resume</strong>, <strong>Projects</strong>, or <strong>Contact</strong> details.</p>
       </div>
     </section>
   </main>
@@ -85,5 +64,6 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
 
 
