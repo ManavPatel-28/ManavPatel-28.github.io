@@ -3,28 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manav Patel – Resume</title>
+  <title>Manav Patel – Resume & Projects</title>
   <meta name="description" content="Resume website for Manav Patel" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0f14; --text:#e8eef6; --muted:#a7b3c4; --brand:#7c3aed; --brand-2:#22d3ee; --ring:0 0 0 3px rgba(124,58,237,.25);
-    }
+    :root{ --bg:#0b0f14; --text:#e8eef6; --muted:#a7b3c4; --ring:0 0 0 3px rgba(124,58,237,.25); }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif}
     a{color:inherit}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .container{max-width:980px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:linear-gradient(180deg,rgba(11,15,20,.95),rgba(11,15,20,.7));border-bottom:1px solid rgba(255,255,255,.05);z-index:20}
     nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .nav-links{display:flex;gap:18px;flex-wrap:wrap}
     .chip{padding:8px 14px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));color:var(--text);text-decoration:none;font-weight:600;transition:.2s}
     .chip:hover{transform:translateY(-1px);box-shadow:var(--ring)}
-    section{margin:42px 0}
+    section{margin:36px 0}
     h1{font-size:32px;margin:0 0 12px;font-weight:800}
     h2{font-size:24px;margin:0 0 16px}
     .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px}
+    ul{margin:8px 0 0 18px}
     footer{margin:48px 0 16px;color:var(--muted);text-align:center;font-size:12px}
   </style>
 </head>
@@ -34,7 +33,9 @@
       <nav>
         <strong>Manav Patel</strong>
         <div class="nav-links">
-          <a class="chip" href="Resume.pdf" target="_blank">Resume</a>
+          <!-- Opens the PDF in a new tab (view only) -->
+          <a class="chip" href="Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a class="chip" href="#projects">Projects</a>
           <a class="chip" href="mailto:Manavspatel2802@gmail.com">Contact</a>
           <a class="chip" href="https://github.com/ManavPatel-28" target="_blank" rel="noreferrer">GitHub</a>
           <a class="chip" href="https://www.linkedin.com/in/manav-patel-211467333" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -44,11 +45,24 @@
   </header>
 
   <main class="container">
-    <section id="resume">
-      <h1>Resume</h1>
+    <section id="intro">
+      <h1>Hello!</h1>
       <div class="card">
-        <p>Click below to open my resume PDF:</p>
-        <a class="chip" href="Resume.pdf" target="_blank">Open Resume</a>
+        <p>I'm a final‑year Computer Science student at Rutgers. Click <strong>Resume</strong> above to view my PDF in a new tab.
+        For quick contact: <a href="mailto:Manavspatel2802@gmail.com">Manavspatel2802@gmail.com</a>.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects (from my resume)</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Spider‑Verse Data Structures (Java)</strong> — Implemented adjacency lists, hash tables with rehashing, DFS, BFS, and Dijkstra’s algorithm.</li>
+          <li><strong>Music Database Project (SQL)</strong> — Normalized relational schema (artists, albums, songs, playlists, users, ratings) and wrote 10 analysis queries.</li>
+          <li><strong>Data Analysis Projects (Python)</strong> — EU Cities, German Credit, Google Playstore; cleaning, transformation, visualization.</li>
+          <li><strong>Bomb Lab – Reverse Engineering (C/Assembly)</strong> — Used GDB/objdump to trace memory and control flow; defused all phases.</li>
+          <li><strong>Truth Table Generator – Logic Circuit Simulator (C)</strong> — Evaluates AND/OR/NOT/XOR, Multiplexer, Decoder; bitwise logic & file I/O.</li>
+        </ul>
       </div>
     </section>
 
@@ -66,8 +80,7 @@
     © <span id="year"></span> Manav Patel. Built with vanilla HTML/CSS.
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
