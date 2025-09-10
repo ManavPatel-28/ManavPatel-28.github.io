@@ -4,52 +4,66 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manav Patel – Portfolio</title>
-  <meta name="description" content="Resume & projects for Manav Patel" />
+  <meta name="description" content="Manav Patel – Resume, projects, and contact." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0f14; --text:#e8eef6; --muted:#a7b3c4; --ring:0 0 0 3px rgba(124,58,237,.25); --brand:#7c3aed; --brand2:#22d3ee;
+      --bg:#0b0f14; --bg-soft:#10151d; --card:#0f1621; --text:#e8eef6; --muted:#a7b3c4; --brand:#7c3aed; --brand-2:#22d3ee; --ring:0 0 0 3px rgba(124,58,237,.25);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;
-      background:radial-gradient(1200px 800px at 10% -10%,rgba(34,211,238,.15),transparent 60%),
-                 radial-gradient(1000px 700px at 110% 10%,rgba(124,58,237,.15),transparent 60%),
-                 var(--bg);
-      color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif}
+    html,body{margin:0;background:radial-gradient(1200px 800px at 10% -10%,rgba(34,211,238,.15),transparent 60%),radial-gradient(1000px 700px at 110% 10%,rgba(124,58,237,.15),transparent 60%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif}
     a{color:inherit}
-    .container{max-width:980px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:linear-gradient(180deg,rgba(11,15,20,.95),rgba(11,15,20,.7));border-bottom:1px solid rgba(255,255,255,.05);z-index:20}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:linear-gradient(180deg,rgba(11,15,20,.85),rgba(11,15,20,.6));border-bottom:1px solid rgba(255,255,255,.05);z-index:20}
     nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .nav-links{display:flex;gap:12px;flex-wrap:wrap}
     .chip{padding:8px 14px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));color:var(--text);text-decoration:none;font-weight:700;transition:.2s}
     .chip:hover{transform:translateY(-1px);box-shadow:var(--ring)}
-    .chip.active{outline:2px solid rgba(124,58,237,.45);}
+    .chip.active{outline:2px solid rgba(124,58,237,.45)}
 
-    section{margin:36px 0}
-    h1{font-size:48px;margin:0 0 12px;font-weight:800}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:32px 0}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px}
+    h1{font-size:56px;line-height:1.05;margin:0 0 8px;font-weight:800}
+    .gradient{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subtitle{color:var(--muted);font-size:16px;margin:0 0 22px}
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.1);text-decoration:none;font-weight:700}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#0b0f14;border-color:transparent}
+    .btn.ghost{background:transparent}
+
+    section{margin:42px 0}
     h2{font-size:26px;margin:0 0 16px}
-    .card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px}
+    .card.pad{padding:22px}
+
     .grid{display:grid;gap:16px}
-    .grid.cols-2{grid-template-columns:1fr 1fr}
-    @media (max-width:720px){.grid.cols-2{grid-template-columns:1fr}}
-    .project{padding:16px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02))}
-    .project h3{margin:0 0 8px}
-    .project ul{margin:6px 0 0 18px}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid.cols-2{grid-template-columns:1fr}}
+
+    .project{padding:18px;border-radius:14px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.06)}
+    .project h3{margin:0;font-size:18px}
+    .project ul{margin:4px 0 0 18px}
+
+    .list{display:grid;gap:10px}
+
     footer{margin:48px 0 16px;color:var(--muted);text-align:center;font-size:12px}
-    .hidden{display:none}
+
+    /* Sections as pages */
+    .page{display:none}
+    .page.active{display:block}
   </style>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
-        <strong id="brand">Manav Patel</strong>
+        <strong>Manav Patel</strong>
         <div class="nav-links">
-          <a class="chip" id="nav-home" href="#home">Home</a>
-          <a class="chip" id="nav-projects" href="#projects">Projects</a>
-          <a class="chip" id="nav-contact" href="#contact">Contact</a>
+          <a class="chip" data-show="home" href="#home">Home</a>
+          <a class="chip" data-show="projects" href="#projects">Projects</a>
+          <a class="chip" data-show="contact" href="#contact">Contact</a>
           <a class="chip" href="Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
           <a class="chip" href="https://github.com/ManavPatel-28" target="_blank" rel="noreferrer">GitHub</a>
           <a class="chip" href="https://www.linkedin.com/in/manav-patel-211467333" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -59,43 +73,58 @@
   </header>
 
   <main class="container">
-    <!-- HOME -->
-    <section id="home" aria-label="home">
-      <h1>Hi, I’m <span style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">Manav Patel</span></h1>
-      <div class="card">
-        <p>Final‑year Computer Science student at Rutgers. Explore my <strong>Projects</strong>, view my <strong>Resume</strong>, or reach out via <a href="mailto:Manavspatel2802@gmail.com">Manavspatel2802@gmail.com</a>.</p>
+    <!-- HOME (general) -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-card">
+          <h1>Hi, I’m <span class="gradient">Manav Patel</span></h1>
+          <p class="subtitle">Final‑year CS @ Rutgers · Java • Python • SQL • C · Data analysis, backend, and systems.</p>
+          <div class="btn-row">
+            <a class="btn primary" href="#projects" data-show="projects">See Projects</a>
+            <a class="btn ghost" href="Resume.pdf" target="_blank">View Resume</a>
+            <a class="btn ghost" href="#contact" data-show="contact">Contact</a>
+          </div>
+        </div>
+        <div class="card pad">
+          <h3 style="margin:0 0 8px">Why interview me</h3>
+          <ul class="list" style="margin:0 0 0 18px">
+            <li>Shipped real coursework projects with measurable outcomes and clean code.</li>
+            <li>Comfortable across stack: data structures, SQL schemas, debugging with GDB.</li>
+            <li>Reliable communicator; fast to learn unfamiliar tools.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="hidden" aria-label="projects">
+    <!-- PROJECTS (only projects) -->
+    <section id="projects" class="page">
       <h2>Projects</h2>
       <div class="grid cols-2">
         <article class="project">
           <h3>Spider‑Verse Data Structures (Java)</h3>
           <ul>
-            <li>Graph algorithms: adjacency lists, DFS/BFS, Dijkstra.</li>
-            <li>Custom hash table with rehashing; OOP design.</li>
+            <li>Built adjacency lists & custom hash table with rehashing.</li>
+            <li>Implemented DFS/BFS + Dijkstra; wrote tests and docs.</li>
           </ul>
         </article>
         <article class="project">
-          <h3>Music Database (SQL)</h3>
+          <h3>Music Database Platform (SQL)</h3>
           <ul>
-            <li>Normalized schema: artists, albums, songs, playlists, users, ratings.</li>
-            <li>10 analytical queries for usage, genres, and popularity.</li>
+            <li>Normalized schema (artists, albums, songs, playlists, users, ratings).</li>
+            <li>10 analysis queries for usage trends & popularity.</li>
           </ul>
         </article>
         <article class="project">
-          <h3>Data Analysis (Python)</h3>
+          <h3>Data Analysis Portfolio (Python)</h3>
           <ul>
-            <li>EU Cities, German Credit, Google Playstore datasets.</li>
-            <li>Pandas/NumPy; Matplotlib visualizations & insights.</li>
+            <li>EU Cities · German Credit · Google Playstore datasets.</li>
+            <li>Pandas/NumPy; Matplotlib visualizations and insights.</li>
           </ul>
         </article>
         <article class="project">
-          <h3>Bomb Lab – Reverse Engineering (C/Assembly)</h3>
+          <h3>Bomb Lab (C/Assembly)</h3>
           <ul>
-            <li>Used GDB/objdump to trace memory and control flow.</li>
+            <li>Reverse‑engineered binary with GDB/objdump; traced control flow.</li>
             <li>Defused all phases; strengthened low‑level debugging.</li>
           </ul>
         </article>
@@ -109,13 +138,15 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="hidden" aria-label="contact">
+    <!-- CONTACT (only contact info) -->
+    <section id="contact" class="page">
       <h2>Contact</h2>
-      <div class="card">
-        <p>Email: <a href="mailto:Manavspatel2802@gmail.com">Manavspatel2802@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/ManavPatel-28" target="_blank">github.com/ManavPatel-28</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/manav-patel-211467333" target="_blank">linkedin.com/in/manav-patel-211467333</a></p>
+      <div class="card pad">
+        <div class="list">
+          <div><strong>Email:</strong> <a href="mailto:Manavspatel2802@gmail.com">Manavspatel2802@gmail.com</a></div>
+          <div><strong>GitHub:</strong> <a target="_blank" href="https://github.com/ManavPatel-28">github.com/ManavPatel-28</a></div>
+          <div><strong>LinkedIn:</strong> <a target="_blank" href="https://www.linkedin.com/in/manav-patel-211467333">linkedin.com/in/manav-patel-211467333</a></div>
+        </div>
       </div>
     </section>
   </main>
@@ -125,22 +156,25 @@
   </footer>
 
   <script>
-    // Simple hash-router to show only one section at a time
-    const sections = {home: document.getElementById('home'), projects: document.getElementById('projects'), contact: document.getElementById('contact')};
-    const nav = {home: document.getElementById('nav-home'), projects: document.getElementById('nav-projects'), contact: document.getElementById('nav-contact')};
-    function setActive(name){
-      Object.keys(sections).forEach(k=>{sections[k].classList.toggle('hidden', k!==name)});
-      Object.keys(nav).forEach(k=>{nav[k].classList.toggle('active', k===name)});
+    // Minimal router: show one section at a time
+    const pages = Array.from(document.querySelectorAll('.page'));
+    const navChips = Array.from(document.querySelectorAll('[data-show]'));
+    function show(id){
+      pages.forEach(p=>p.classList.toggle('active', p.id===id));
+      navChips.forEach(c=>c.classList.toggle('active', c.getAttribute('data-show')===id));
     }
     function route(){
-      const hash = (location.hash||'#home').replace('#','');
-      setActive(sections[hash]? hash : 'home');
+      const id = (location.hash||'#home').slice(1);
+      if(!document.getElementById(id)) return show('home');
+      show(id);
     }
-    addEventListener('hashchange', route); route();
+    window.addEventListener('hashchange', route);
+    route();
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
 
 
