@@ -4,7 +4,7 @@ Welcome to my portfolio repository! 👋
 I’m **Manav Patel**, a final-year Computer Science student at **Rutgers University** with experience in **Java, Python, SQL, C, and Assembly**.  
 
 📌 Explore my live portfolio here:  
-👉 **[manavpatel-28.github.io](https://manavpatel-28.github.io/)**  
+👉 **(https://manavpatel-28.github.io/)**  
 
 ---
 
