@@ -12,7 +12,7 @@ I’m **Manav Patel**, a final-year Computer Science student at **Rutgers Univer
 - 🎓 Computer Science student @ Rutgers University  
 - 🛠 Skilled in software development, data analysis, and backend systems  
 - 📊 Experienced with Java, Python (Pandas/NumPy), SQL, C, and debugging (GDB/objdump)  
-- 📚 Dean’s List – Fall 2024  
+- 📚 Dean’s List – Fall 2024, Fall 2025
 
 ---
 
